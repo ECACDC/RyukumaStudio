@@ -1,8 +1,8 @@
 const features = [
-  "Every animation is custom-made for the combat system.",
-  "Clean, organized scripts built around reusable ModuleScripts.",
-  "Easy configuration for dash distance, damage, movement speed, cooldowns, and more.",
-  "Designed to be readable, editable, and quick to integrate into your own Roblox experience.",
+  "Custom-made animations.",
+  "Clean scripts using ModuleScripts.",
+  "Easy to configure dashes, damage, speed, cooldowns, and more.",
+  "Made to be easy to edit and drop into your own game.",
 ];
 
 export default function Home() {
@@ -13,23 +13,18 @@ export default function Home() {
           <span className="brandMark">R</span>
           <span>RYUKUMA STUDIOS</span>
         </a>
-        <a className="navLink" href="#product">Combat System</a>
+        <span className="navText">Roblox Assets</span>
       </header>
 
-      <section className="hero shell" id="top">
-        <div className="eyebrow">ROBLOX DEVELOPMENT ASSETS</div>
-        <h1>Build faster.<br />Fight better.</h1>
-        <p className="heroCopy">
-          High-quality Roblox systems made for developers who want polished gameplay
-          without rebuilding everything from scratch.
-        </p>
-        <a className="primaryButton" href="#product">View Combat System</a>
+      <section className="storeHeader shell" id="top">
+        <h1>Assets</h1>
+        <p>Roblox systems and assets made by Ryukuma Studios.</p>
       </section>
 
-      <section className="productSection shell" id="product">
+      <section className="productSection shell">
         <div className="productIntro">
           <div>
-            <div className="eyebrow">FEATURED ASSET</div>
+            <div className="eyebrow">COMBAT</div>
             <h2>Combat System</h2>
           </div>
           <div className="price">$5.99 <span>USD</span></div>
@@ -37,64 +32,30 @@ export default function Home() {
 
         <div className="productGrid">
           <div className="videoCard">
-            <video
-              className="demoVideo"
-              src="/combat-system-demo.mp4"
-              controls
-              playsInline
-              preload="metadata"
-            >
+            <video className="demoVideo" src="/combat-system-demo.mp4" controls playsInline preload="metadata">
               Your browser does not support embedded video.
             </video>
-            <div className="videoLabel">
-              <span className="liveDot" />
-              Gameplay demo
-            </div>
           </div>
 
           <div className="detailsCard">
-            <div className="badge">ONE-TIME PURCHASE</div>
-            <h3>A clean foundation for responsive Roblox combat.</h3>
             <p className="detailsLead">
-              Drop a polished combat framework into your project and tune the important
-              gameplay values without digging through messy code.
+              A configurable Roblox combat system with custom animations and organized code.
             </p>
 
             <ul className="featureList">
               {features.map((feature) => (
-                <li key={feature}>
-                  <span className="check">✓</span>
-                  <span>{feature}</span>
-                </li>
+                <li key={feature}><span className="check">✓</span><span>{feature}</span></li>
               ))}
             </ul>
 
             <form action="/api/checkout" method="POST">
               <button className="buyButton" type="submit">
-                Buy Combat System — $5.99
+                Buy — $5.99
                 <span>→</span>
               </button>
             </form>
-            <p className="purchaseNote">Secure checkout powered by Stripe. No account required.</p>
+            <p className="purchaseNote">Secure checkout through Stripe.</p>
           </div>
-        </div>
-      </section>
-
-      <section className="promise shell">
-        <div>
-          <span className="promiseNumber">01</span>
-          <h4>Built for developers</h4>
-          <p>Readable structure, simple configuration, and no unnecessary clutter.</p>
-        </div>
-        <div>
-          <span className="promiseNumber">02</span>
-          <h4>Instant access</h4>
-          <p>Once payments are connected, purchases can deliver the files automatically.</p>
-        </div>
-        <div>
-          <span className="promiseNumber">03</span>
-          <h4>Made by Ryukuma</h4>
-          <p>Systems created from real Roblox development experience.</p>
         </div>
       </section>
 
@@ -103,7 +64,7 @@ export default function Home() {
           <span className="brandMark">R</span>
           <span>RYUKUMA STUDIOS</span>
         </div>
-        <p>© 2026 Ryukuma Studios. Roblox is a trademark of Roblox Corporation.</p>
+        <p>© 2026 Ryukuma Studios</p>
       </footer>
     </main>
   );
