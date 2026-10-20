@@ -1,14 +1,16 @@
 const products = [
   {
     name: "Combat System",
-    price: "$5.99",
+    usd: "$5.99",
+    robux: "R$2999",
     href: "/products/combat-system",
     preview: "/combat-system-demo.mp4",
     type: "video",
   },
   {
     name: "Sword Pack",
-    price: "$5.99",
+    usd: "$5.99",
+    robux: "R$2999",
     href: "/products/sword-pack",
     preview: "/sword-pack-cover.jpg",
     type: "image",
@@ -23,8 +25,19 @@ export default function Home() {
           <span className="brandMark">R</span>
           <span>RYUKUMA STUDIOS</span>
         </a>
-        <span className="navText">Roblox Assets</span>
+        <nav className="navLinks">
+          <a href="/">Home</a>
+          <a href="/contact">Contact Us</a>
+        </nav>
       </header>
+
+      <div className="robuxNotice shell">
+        <strong>
+          For a limited time, we accept Robux payments. You must cover the Roblox tax.
+          If you want to pay with Robux, do not use the checkout on the product page —{" "}
+          <a href="/contact">contact us</a> on our Discord server instead.
+        </strong>
+      </div>
 
       <section className="storeHeader shell">
         <h1>Assets</h1>
@@ -42,11 +55,10 @@ export default function Home() {
                   <img src={product.preview} alt={product.name} />
                 )}
                 <div className="assetOverlay">
-                  <div>
+                  <div className="assetOverlayContent">
                     <div className="assetName">{product.name}</div>
-                    <div className="assetPrice">{product.price}</div>
+                    <div className="assetPrice">{product.usd} · {product.robux}</div>
                   </div>
-                  <span className="assetArrow">→</span>
                 </div>
               </div>
             </a>
