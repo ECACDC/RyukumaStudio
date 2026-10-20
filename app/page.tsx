@@ -6,6 +6,13 @@ const products = [
     preview: "/combat-system-demo.mp4",
     type: "video",
   },
+  {
+    name: "Sword Pack",
+    price: "$5.99",
+    href: "/products/sword-pack",
+    preview: "/sword-pack-cover.jpg",
+    type: "image",
+  },
 ];
 
 export default function Home() {
@@ -31,7 +38,9 @@ export default function Home() {
               <div className="assetPreview">
                 {product.type === "video" ? (
                   <video src={product.preview} muted playsInline preload="metadata" />
-                ) : null}
+                ) : (
+                  <img src={product.preview} alt={product.name} />
+                )}
                 <div className="assetOverlay">
                   <div>
                     <div className="assetName">{product.name}</div>
