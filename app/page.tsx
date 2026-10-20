@@ -4,8 +4,8 @@ const products = [
     usd: "$5.99",
     robux: "R$2999",
     href: "/products/combat-system",
-    preview: "/combat-system-demo.mp4",
-    type: "video",
+    preview: "/tsb-combat-system-cover.png",
+    type: "image",
   },
   {
     name: "Sword Pack",
@@ -49,11 +49,7 @@ export default function Home() {
           {products.map((product) => (
             <a className="assetCard" href={product.href} key={product.name}>
               <div className="assetPreview">
-                {product.type === "video" ? (
-                  <video src={product.preview} muted playsInline preload="metadata" />
-                ) : (
-                  <img src={product.preview} alt={product.name} />
-                )}
+                <img src={product.preview} alt={product.name} />
                 <div className="assetOverlay">
                   <div className="assetOverlayContent">
                     <div className="assetName">{product.name}</div>
