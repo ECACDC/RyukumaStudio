@@ -37,7 +37,7 @@ button{font:inherit}
 .catalog{padding:10px 0 70px}
 .assetGrid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(315px,1fr));
   gap:12px;
   align-items:start
 }
