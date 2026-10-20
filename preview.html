@@ -11,7 +11,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1120px,calc(100% - 40px));
 .nav{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .brand{display:inline-flex;gap:9px;align-items:center;font-size:14px;font-weight:700}.mark{display:grid;width:30px;height:30px;place-items:center;border-radius:4px;background:var(--accent);color:#fff;font-weight:700}
 .navText{font-size:13px;color:var(--muted)}.storeHeader{padding:38px 0 22px}.storeHeader h1{margin:0 0 6px;font-size:32px}.storeHeader p{margin:0;color:var(--muted);font-size:14px}
-.catalog{padding:10px 0 70px}.assetGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}.assetPreview{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:6px;border:1px solid var(--line);background:#e9e9e9}
+.catalog{padding:10px 0 70px}.assetGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(315px,1fr));gap:12px}.assetPreview{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:6px;border:1px solid var(--line);background:#e9e9e9}
 .assetPreview video{width:100%;height:100%;object-fit:cover;display:block;transition:.15s}.assetOverlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:space-between;padding:14px;color:#fff;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0) 58%);opacity:0;transition:.15s}
 .assetCard:hover .assetOverlay{opacity:1}.assetCard:hover video{transform:scale(1.015);filter:brightness(.88)}.assetName{font-size:17px;font-weight:700}.assetPrice{margin-top:2px;color:#f1f1f1;font-size:14px}.assetArrow{font-size:20px}
 footer{min-height:100px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);color:#858585;font-size:11px}
@@ -34,6 +34,15 @@ footer{min-height:100px;display:flex;align-items:center;justify-content:space-be
         <video src="./public/combat-system-demo.mp4" muted playsinline preload="metadata"></video>
         <div class="assetOverlay">
           <div><div class="assetName">Combat System</div><div class="assetPrice">$5.99</div></div>
+          <span class="assetArrow">→</span>
+        </div>
+      </div>
+    </a>
+    <a class="assetCard" href="./sword-pack.html">
+      <div class="assetPreview">
+        <img src="./public/sword-pack-cover.jpg" alt="Sword Pack" style="width:100%;height:100%;object-fit:cover;display:block;transition:.15s">
+        <div class="assetOverlay">
+          <div><div class="assetName">Sword Pack</div><div class="assetPrice">$5.99</div></div>
           <span class="assetArrow">→</span>
         </div>
       </div>
