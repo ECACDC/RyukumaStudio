@@ -22,7 +22,13 @@ export default function MapOnePage() {
 
         <div className="detailGrid">
           <div className="videoCard">
-            <img src="/fantasy-map-lobby-cover.png" alt="Fantasy Lobby Map" className="demoVideo" />
+            <iframe
+              className="demoVideo"
+              src="https://www.youtube.com/embed/xZR2SwN6T-M"
+              title="Fantasy Lobby Map Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
 
           <div className="detailsCard">
