@@ -38,6 +38,7 @@ export default function Home() {
 
       <div className="robuxNotice shell">
         <strong>Ryukuma Studios Asset Store</strong>
+        <img className="heroStudioLogo" src="/RyukumaFavicon.png" alt="Ryukuma Studios RS logo" />
       </div>
 
       <section className="storeHeader shell">
