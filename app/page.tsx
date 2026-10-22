@@ -14,10 +14,11 @@ const products = [
     preview: "/sword-pack-cover.jpg",
   },
   {
-    name: "Map One",
+    name: "Fantasy Lobby Map",
     usd: "$19.99",
+    robux: "R$6999",
     href: "/products/map-one",
-    preview: "/map-one-cover.png",
+    preview: "/fantasy-map-lobby-cover.png",
   },
 ];
 
