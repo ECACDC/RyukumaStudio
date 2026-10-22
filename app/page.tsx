@@ -27,7 +27,7 @@ export default function Home() {
     <main>
       <header className="nav shell">
         <a className="brand" href="/" aria-label="Ryukuma Studios home">
-          <span className="brandMark">R</span>
+          <img className="brandLogo" src="/RyukumaFavicon.png" alt="" aria-hidden="true" />
           <span>RYUKUMA STUDIOS</span>
         </a>
         <nav className="navLinks">
@@ -68,7 +68,7 @@ export default function Home() {
 
       <footer className="footer shell">
         <div className="brand footerBrand">
-          <span className="brandMark">R</span>
+          <img className="brandLogo" src="/RyukumaFavicon.png" alt="" aria-hidden="true" />
           <span>RYUKUMA STUDIOS</span>
         </div>
         <p>© 2026 Ryukuma Studios</p>
