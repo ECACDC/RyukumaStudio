@@ -19,7 +19,7 @@ button{font:inherit}
 .navLinks{display:flex;gap:22px;align-items:center;font-size:14px}
 .navLinks a:hover{text-decoration:underline}
 .navText{font-size:13px;color:var(--muted)}
-.robuxNotice{padding:18px 0 2px;font-size:14px;line-height:1.55;color:#111}
+.robuxNotice{padding:52px 0 30px;text-align:center;font-size:52px;line-height:1.1;color:#111;font-weight:900;letter-spacing:-1.5px}
 .robuxNotice a{color:#246b9b;text-decoration:underline}
 .storeHeader{padding:28px 0 20px}
 .storeHeader h1{margin:0 0 6px;font-size:32px;font-weight:700}
@@ -72,7 +72,7 @@ button{font:inherit}
   .shell{width:min(100% - 24px,1120px)}
   .nav{height:auto;padding:14px 0;gap:14px;align-items:flex-start}
   .navLinks{gap:12px;font-size:13px}
-  .robuxNotice{font-size:13px}
+  .robuxNotice{padding:38px 0 24px;font-size:36px;letter-spacing:-1px}
   .storeHeader{padding:24px 0 18px}
   .assetGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
   .assetOverlay{opacity:1;padding:10px}
