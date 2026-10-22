@@ -3,6 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Ryukuma Studios — Roblox Assets",
+  icons: { icon: "/RyukumaFavicon.png", shortcut: "/RyukumaFavicon.png", apple: "/RyukumaFavicon.png" },
   description: "Polished Roblox systems and assets built by Ryukuma Studios.",
 };
 
