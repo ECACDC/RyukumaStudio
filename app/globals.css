@@ -88,3 +88,5 @@ button{font:inherit}
 
 .heroStudioLogo{display:block;width:min(230px,65vw);height:auto;margin:8px auto 0;object-fit:contain}
 @media(max-width:560px){.heroStudioLogo{width:min(190px,62vw);margin-top:6px}}
+
+.brandLogo{display:block;width:30px;height:30px;object-fit:contain;flex-shrink:0}
