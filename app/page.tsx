@@ -37,11 +37,7 @@ export default function Home() {
       </header>
 
       <div className="robuxNotice shell">
-        <strong>
-          For a limited time, we accept Robux payments on selected items. You must cover the Roblox tax.
-          If you want to pay with Robux, do not use the checkout on the product page —{" "}
-          <a href="/contact">contact us</a> on our Discord server instead.
-        </strong>
+        <strong>Ryukuma Studios Asset Store</strong>
       </div>
 
       <section className="storeHeader shell">
