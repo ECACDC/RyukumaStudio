@@ -5,7 +5,6 @@ const products = [
     robux: "R$2999",
     href: "/products/combat-system",
     preview: "/tsb-combat-system-cover.png",
-    type: "image",
   },
   {
     name: "Sword Pack",
@@ -13,7 +12,12 @@ const products = [
     robux: "R$2999",
     href: "/products/sword-pack",
     preview: "/sword-pack-cover.jpg",
-    type: "image",
+  },
+  {
+    name: "Map One",
+    usd: "$19.99",
+    href: "/products/map-one",
+    preview: "/map-one-cover.png",
   },
 ];
 
@@ -33,7 +37,7 @@ export default function Home() {
 
       <div className="robuxNotice shell">
         <strong>
-          For a limited time, we accept Robux payments. You must cover the Roblox tax.
+          For a limited time, we accept Robux payments on selected items. You must cover the Roblox tax.
           If you want to pay with Robux, do not use the checkout on the product page —{" "}
           <a href="/contact">contact us</a> on our Discord server instead.
         </strong>
@@ -53,7 +57,9 @@ export default function Home() {
                 <div className="assetOverlay">
                   <div className="assetOverlayContent">
                     <div className="assetName">{product.name}</div>
-                    <div className="assetPrice">{product.usd} · {product.robux}</div>
+                    <div className="assetPrice">
+                      {product.usd}{product.robux ? ` · ${product.robux}` : ""}
+                    </div>
                   </div>
                 </div>
               </div>
