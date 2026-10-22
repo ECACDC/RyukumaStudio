@@ -20,7 +20,15 @@ export default function SwordPackPage() {
         </div>
 
         <div className="detailGrid">
-          <div className="videoCard"><video className="demoVideo" src="/sword-pack-demo.mp4" controls playsInline preload="metadata" /></div>
+          <div className="videoCard">
+            <iframe
+              className="demoVideo"
+              src="https://www.youtube.com/embed/o6KJT7hRxPU"
+              title="Fantasy Sword Bundle Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
           <div className="detailsCard">
             <p className="detailsLead">A pack of 14 custom-made swords, ready to use in Roblox Studio.</p>
             <ul className="featureList">
