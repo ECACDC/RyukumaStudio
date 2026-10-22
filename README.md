@@ -42,3 +42,5 @@ The homepage expects the optimized demo at:
 ```
 public/combat-system-demo.mp4
 ```
+
+<!-- deployment trigger -->
