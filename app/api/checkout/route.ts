@@ -35,9 +35,17 @@ export async function POST(request: NextRequest) {
 
   const formData = await request.formData();
   const productId = formData.get("productId");
+  const termsAccepted = formData.get("termsAccepted");
 
   if (typeof productId !== "string" || !(productId in products)) {
     return NextResponse.json({ error: "Invalid product." }, { status: 400 });
+  }
+
+  if (termsAccepted !== "2026-10-24") {
+    return NextResponse.json(
+      { error: "You must agree to the Terms of Use & Refund Policy before purchasing." },
+      { status: 400 }
+    );
   }
 
   const product = products[productId as ProductId];
@@ -68,6 +76,8 @@ export async function POST(request: NextRequest) {
       ],
       metadata: {
         productId,
+        termsAccepted: "true",
+        termsVersion: "2026-10-24",
       },
       success_url: `${origin}/purchase/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/products/${productId === "fantasy-lobby-map" ? "map-one" : productId}`,
