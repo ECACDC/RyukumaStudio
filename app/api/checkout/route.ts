@@ -41,7 +41,10 @@ export async function POST(request: NextRequest) {
   }
 
   const product = products[productId as ProductId];
-  const stripe = new Stripe(secretKey, {\n    httpClient: Stripe.createFetchHttpClient(),\n    telemetry: false,\n  });
+  const stripe = new Stripe(secretKey, {
+    httpClient: Stripe.createFetchHttpClient(),
+    telemetry: false,
+  });
   const origin = request.nextUrl.origin;
 
   try {
