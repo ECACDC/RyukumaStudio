@@ -91,6 +91,6 @@ button{font:inherit}
 
 .brandLogo{display:block;width:30px;height:30px;object-fit:contain;flex-shrink:0}
 
-.backButton{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 0 18px;font-size:52px;line-height:1;font-weight:400;color:var(--text);border-radius:8px;transition:background .15s ease,transform .15s ease}
+.backButton{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 0 18px -28px;font-size:52px;line-height:1;font-weight:400;color:var(--text);border-radius:8px;transition:background .15s ease,transform .15s ease}
 .backButton:hover{background:#f0f0f0;transform:translateX(-2px)}
-@media(max-width:560px){.backButton{width:46px;height:46px;margin-bottom:14px;font-size:46px}}
+@media(max-width:560px){.backButton{width:46px;height:46px;margin:0 0 14px -8px;font-size:46px}}
