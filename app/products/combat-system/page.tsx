@@ -10,7 +10,7 @@ export default function CombatSystemPage() {
     <main>
       <header className="nav shell">
         <a className="brand" href="/"><img className="brandLogo" src="/TransparentLogoRS.png" alt="" aria-hidden="true" /><span>RYUKUMA STUDIOS</span></a>
-        <nav className="navLinks"><a href="/">Home</a><a href="/contact">Contact Us</a></nav>
+        <nav className="navLinks"><a href="/">Home</a><a href="/contact">Contact Us</a><a href="/terms">Terms & Refunds</a></nav>
       </header>
       <section className="detailPage shell">
         <a className="backButton" href="/" aria-label="Back to store">‹</a>
@@ -26,9 +26,13 @@ export default function CombatSystemPage() {
             <p className="robuxInfo">Paying with Robux? Price: <strong>R$2999</strong>. Do not use the checkout below. You must cover the Roblox tax. <a href="/contact">Contact us</a> on Discord instead.</p>
             <form action="/api/checkout" method="POST">
               <input type="hidden" name="productId" value="combat-system" />
+              <label className="termsAgreement">
+                <input type="checkbox" name="termsAccepted" value="2026-10-24" required />
+                <span>I have read and agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Use &amp; Refund Policy</a>, including the digital-product refund policy.</span>
+              </label>
               <button className="buyButton" type="submit"><span>Buy with USD — $5.99</span><span>→</span></button>
             </form>
-            <p className="purchaseNote">USD checkout only. Secure checkout through Stripe.</p>
+            <p className="purchaseNote">Digital product. Sales are generally final once delivered, except where required by law or covered by our Refund Policy. Secure USD checkout through Stripe.</p>
           </div>
         </div>
       </section>
