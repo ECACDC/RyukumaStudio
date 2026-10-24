@@ -12,7 +12,8 @@ export default function CombatSystemPage() {
         <a className="brand" href="/"><img className="brandLogo" src="/TransparentLogoRS.png" alt="" aria-hidden="true" /><span>RYUKUMA STUDIOS</span></a>
         <nav className="navLinks"><a href="/">Home</a><a href="/contact">Contact Us</a></nav>
       </header>
-      <section className="detailPage shell">\n        <a className="backButton" href="/" aria-label="Back to store">‹</a>
+      <section className="detailPage shell">
+        <a className="backButton" href="/" aria-label="Back to store">‹</a>
         <div className="detailTop">
           <div><div className="eyebrow">COMBAT</div><h1>Combat System</h1></div>
           <div className="price">$5.99 <span>USD</span><span className="robuxPrice">R$2999</span></div>
