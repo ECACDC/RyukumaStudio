@@ -94,3 +94,19 @@ button{font:inherit}
 .backButton{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 0 18px -28px;font-size:52px;line-height:1;font-weight:400;color:var(--text);border-radius:8px;transition:background .15s ease,transform .15s ease}
 .backButton:hover{background:#f0f0f0;transform:translateX(-2px)}
 @media(max-width:560px){.backButton{width:46px;height:46px;margin:0 0 14px -8px;font-size:46px}}
+
+.termsAgreement{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start;margin:0 0 12px;padding:12px;border:1px solid #d5e0e6;border-radius:5px;background:#f7f9fa;color:#4f4f4f;font-size:12px;line-height:1.45;cursor:pointer}
+.termsAgreement input{width:16px;height:16px;margin:1px 0 0;accent-color:var(--accent)}
+.termsAgreement a{color:#246b9b;text-decoration:underline;font-weight:700}
+.termsPage{max-width:900px;padding:52px 0 84px}
+.termsIntro{padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.termsIntro h1{margin:6px 0 8px;font-size:42px;letter-spacing:-1px}
+.termsIntro>p:not(.termsUpdated){max-width:760px;margin:20px 0 0;color:#4b4b4b;font-size:16px;line-height:1.65}
+.termsUpdated{margin:0;color:var(--muted);font-size:12px}
+.termsPage section{margin:0 0 30px}
+.termsPage h2{margin:0 0 10px;font-size:20px}
+.termsPage section p{margin:0 0 11px;color:#4b4b4b;font-size:15px;line-height:1.7}
+.termsPage section p:last-child{margin-bottom:0}
+.refundSection,.agreementSection{padding:22px;border:1px solid #d5e0e6;border-radius:7px;background:#f7f9fa}
+.agreementSection a{color:#246b9b;text-decoration:underline;font-weight:700}
+@media(max-width:560px){.navLinks{flex-wrap:wrap;justify-content:flex-end}.termsPage{padding:36px 0 60px}.termsIntro h1{font-size:34px}.refundSection,.agreementSection{padding:17px}}
