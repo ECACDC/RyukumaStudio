@@ -21,7 +21,7 @@ button{font:inherit}
 .navText{font-size:13px;color:var(--muted)}
 .robuxNotice{padding:52px 0 30px;text-align:center;font-size:52px;line-height:1.1;color:#111;font-weight:900;letter-spacing:-1.5px}
 .robuxNotice a{color:#246b9b;text-decoration:underline}
-.storeHeader{padding:28px 0 20px}
+.storeHeader{padding:10px 0 20px}
 .storeHeader h1{margin:0 0 6px;font-size:32px;font-weight:700}
 .storeHeader p{margin:0;color:var(--muted);font-size:14px}
 .catalog{padding:8px 0 70px}
@@ -90,3 +90,7 @@ button{font:inherit}
 @media(max-width:560px){.heroStudioLogo{width:min(190px,62vw);margin-top:6px}}
 
 .brandLogo{display:block;width:30px;height:30px;object-fit:contain;flex-shrink:0}
+
+.backButton{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 0 18px;font-size:52px;line-height:1;font-weight:400;color:var(--text);border-radius:8px;transition:background .15s ease,transform .15s ease}
+.backButton:hover{background:#f0f0f0;transform:translateX(-2px)}
+@media(max-width:560px){.backButton{width:46px;height:46px;margin-bottom:14px;font-size:46px}}
