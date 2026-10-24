@@ -27,7 +27,7 @@ export default function Home() {
     <main>
       <header className="nav shell">
         <a className="brand" href="/" aria-label="Ryukuma Studios home">
-          <img className="brandLogo" src="/RyukumaFavicon.png" alt="" aria-hidden="true" />
+          <img className="brandLogo" src="/TransparentLogoRS.png" alt="" aria-hidden="true" />
           <span>RYUKUMA STUDIOS</span>
         </a>
         <nav className="navLinks">
