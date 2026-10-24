@@ -2,7 +2,7 @@ export default function ContactPage() {
   return (
     <main>
       <header className="nav shell">
-        <a className="brand" href="/"><span className="brandMark">R</span><span>RYUKUMA STUDIOS</span></a>
+        <a className="brand" href="/"><img className="brandLogo" src="/TransparentLogoRS.png" alt="" aria-hidden="true" /><span>RYUKUMA STUDIOS</span></a>
         <nav className="navLinks"><a href="/">Home</a><a href="/contact">Contact Us</a></nav>
       </header>
 
