@@ -37,7 +37,15 @@ export async function GET(request: NextRequest) {
 
     const file = files[productId];
     const { env } = getCloudflareContext();
-    const bucket = (env as unknown as { PAID_ASSETS: R2Bucket }).PAID_ASSETS;
+    const bucket = (env as unknown as {
+      PAID_ASSETS: {
+        get(key: string): Promise<{
+          body: ReadableStream;
+          size: number;
+          writeHttpMetadata(headers: Headers): void;
+        } | null>;
+      };
+    }).PAID_ASSETS;
     const object = await bucket.get(file.key);
 
     if (!object) {
