@@ -17,7 +17,7 @@ export default function MapOnePage() {
         <a className="backButton" href="/" aria-label="Back to store">‹</a>
         <div className="detailTop">
           <div><div className="eyebrow">MAP</div><h1>Fantasy Lobby Map</h1></div>
-          <div className="price">FREE <span>TESTING</span></div>
+          <div className="price">$19.99 <span>USD</span><span className="robuxPrice">R$6999</span></div>
         </div>
         <div className="detailGrid">
           <div className="videoCard">
@@ -26,8 +26,16 @@ export default function MapOnePage() {
           <div className="detailsCard">
             <p className="detailsLead">A high-quality fantasy Roblox lobby map built completely from scratch and optimized for Roblox.</p>
             <ul className="featureList">{features.map((feature) => <li key={feature}><span className="check">✓</span><span>{feature}</span></li>)}</ul>
-            <a className="buyButton" href="/api/download?productId=fantasy-lobby-map"><span>Download Free</span><span>↓</span></a>
-            <p className="purchaseNote">Temporarily free for Ryukuma Studios download testing.</p>
+            <p className="robuxInfo">Paying with Robux? Price: <strong>R$6999</strong>. Do not use the checkout below. You must cover the Roblox tax. <a href="/contact">Contact us</a> on Discord instead.</p>
+            <form action="/api/checkout" method="POST">
+              <input type="hidden" name="productId" value="fantasy-lobby-map" />
+              <label className="termsAgreement">
+                <input type="checkbox" name="termsAccepted" value="2026-10-24" required />
+                <span>I have read and agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Use &amp; Refund Policy</a>, including the digital-product refund policy.</span>
+              </label>
+              <button className="buyButton" type="submit"><span>Buy with USD — $19.99</span><span>→</span></button>
+            </form>
+            <p className="purchaseNote">Digital product. Sales are generally final once delivered, except where required by law or covered by our Refund Policy. Secure USD checkout through Stripe.</p>
           </div>
         </div>
       </section>
