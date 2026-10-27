@@ -1,4 +1,3 @@
-import Stripe from "stripe";
 import { NextRequest, NextResponse } from "next/server";
 import { AwsClient } from "aws4fetch";
 
@@ -12,14 +11,13 @@ const files = {
 } as const;
 
 export async function GET(request: NextRequest) {
-  const sessionId = request.nextUrl.searchParams.get("session_id");
-  const stripeSecret = process.env.STRIPE_SECRET_KEY;
+  const productId = request.nextUrl.searchParams.get("productId") as keyof typeof files | null;
   const accessKeyId = process.env.R2_ACCESS_KEY_ID;
   const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
   const accountId = process.env.R2_ACCOUNT_ID;
 
-  if (!sessionId || !stripeSecret) {
-    return NextResponse.json({ error: "Invalid download request." }, { status: 400 });
+  if (!productId || !(productId in files)) {
+    return NextResponse.json({ error: "Invalid product." }, { status: 400 });
   }
 
   if (!accessKeyId || !secretAccessKey || !accountId) {
@@ -28,21 +26,6 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const stripe = new Stripe(stripeSecret, {
-      httpClient: Stripe.createFetchHttpClient(),
-      telemetry: false,
-    });
-    const session = await stripe.checkout.sessions.retrieve(sessionId);
-
-    if (session.payment_status !== "paid") {
-      return NextResponse.json({ error: "Payment has not been confirmed." }, { status: 403 });
-    }
-
-    const productId = session.metadata?.productId as keyof typeof files | undefined;
-    if (!productId || !(productId in files)) {
-      return NextResponse.json({ error: "No downloadable product was found for this purchase." }, { status: 404 });
-    }
-
     const file = files[productId];
     const client = new AwsClient({
       service: "s3",
