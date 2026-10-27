@@ -1,26 +1,34 @@
 import Stripe from "stripe";
 import { NextRequest, NextResponse } from "next/server";
-import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { AwsClient } from "aws4fetch";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const files = {
-  "combat-system": { key: "combat-system.rbxl", filename: "Ryukuma-Combat-System.rbxl", type: "application/octet-stream" },
-  "sword-pack": { key: "sword-bundle.zip", filename: "Ryukuma-Sword-Bundle.zip", type: "application/zip" },
-  "fantasy-lobby-map": { key: "fantasy-lobby-map.rbxl", filename: "Ryukuma-Fantasy-Lobby-Map.rbxl", type: "application/octet-stream" },
+  "combat-system": { key: "combat-system.rbxl" },
+  "sword-pack": { key: "sword-bundle.zip" },
+  "fantasy-lobby-map": { key: "fantasy-lobby-map.rbxl" },
 } as const;
 
 export async function GET(request: NextRequest) {
   const sessionId = request.nextUrl.searchParams.get("session_id");
-  const secretKey = process.env.STRIPE_SECRET_KEY;
+  const stripeSecret = process.env.STRIPE_SECRET_KEY;
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID;
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
+  const accountId = process.env.R2_ACCOUNT_ID;
 
-  if (!sessionId || !secretKey) {
+  if (!sessionId || !stripeSecret) {
     return NextResponse.json({ error: "Invalid download request." }, { status: 400 });
   }
 
+  if (!accessKeyId || !secretAccessKey || !accountId) {
+    console.error("R2 signing credentials are not configured.");
+    return NextResponse.json({ error: "Downloads are temporarily unavailable." }, { status: 503 });
+  }
+
   try {
-    const stripe = new Stripe(secretKey, {
+    const stripe = new Stripe(stripeSecret, {
       httpClient: Stripe.createFetchHttpClient(),
       telemetry: false,
     });
@@ -36,31 +44,21 @@ export async function GET(request: NextRequest) {
     }
 
     const file = files[productId];
-    const { env } = getCloudflareContext();
-    const bucket = (env as unknown as {
-      PAID_ASSETS: {
-        get(key: string): Promise<{
-          body: ReadableStream;
-          size: number;
-          writeHttpMetadata(headers: Headers): void;
-        } | null>;
-      };
-    }).PAID_ASSETS;
-    const object = await bucket.get(file.key);
+    const client = new AwsClient({
+      service: "s3",
+      region: "auto",
+      accessKeyId,
+      secretAccessKey,
+    });
 
-    if (!object) {
-      console.error("Paid asset missing from R2:", file.key);
-      return NextResponse.json({ error: "The purchased file is temporarily unavailable. Please contact support." }, { status: 503 });
-    }
+    const objectUrl =
+      `https://${accountId}.r2.cloudflarestorage.com/ryukuma-paid-assets/${encodeURIComponent(file.key)}?X-Amz-Expires=300`;
 
-    const headers = new Headers();
-    object.writeHttpMetadata(headers);
-    headers.set("Content-Type", file.type);
-    headers.set("Content-Disposition", `attachment; filename="${file.filename}"`);
-    headers.set("Cache-Control", "private, no-store");
-    if (object.size) headers.set("Content-Length", String(object.size));
+    const signedRequest = await client.sign(new Request(objectUrl), {
+      aws: { signQuery: true },
+    });
 
-    return new Response(object.body, { headers });
+    return NextResponse.redirect(signedRequest.url.toString(), 302);
   } catch (error) {
     console.error("Secure download error:", error);
     return NextResponse.json({ error: "Unable to verify this purchase." }, { status: 500 });
