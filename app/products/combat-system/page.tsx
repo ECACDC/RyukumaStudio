@@ -16,7 +16,7 @@ export default function CombatSystemPage() {
         <a className="backButton" href="/" aria-label="Back to store">‹</a>
         <div className="detailTop">
           <div><div className="eyebrow">COMBAT</div><h1>Combat System</h1></div>
-          <div className="price">$5.99 <span>USD</span><span className="robuxPrice">R$2999</span></div>
+          <div className="price">$0.99 <span>USD</span><span className="robuxPrice">R$2999</span></div>
         </div>
         <div className="detailGrid">
           <div className="videoCard"><video className="demoVideo" src="/combat-system-demo.mp4" controls playsInline preload="metadata" /></div>
@@ -30,7 +30,7 @@ export default function CombatSystemPage() {
                 <input type="checkbox" name="termsAccepted" value="2026-10-24" required />
                 <span>I have read and agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Use &amp; Refund Policy</a>, including the digital-product refund policy.</span>
               </label>
-              <button className="buyButton" type="submit"><span>Buy with USD — $5.99</span><span>→</span></button>
+              <button className="buyButton" type="submit"><span>Buy with USD — $0.99</span><span>→</span></button>
             </form>
             <p className="purchaseNote">Digital product. Sales are generally final once delivered, except where required by law or covered by our Refund Policy. Secure USD checkout through Stripe.</p>
           </div>
