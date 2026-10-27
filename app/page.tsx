@@ -1,22 +1,22 @@
 const products = [
   {
     name: "Combat System",
-    usd: "$0.99",
-    robux: "R$2999",
+    usd: "FREE",
+    robux: "",
     href: "/products/combat-system",
     preview: "/tsb-combat-system-cover.png",
   },
   {
     name: "Sword Pack",
-    usd: "$0.99",
-    robux: "R$2999",
+    usd: "FREE",
+    robux: "",
     href: "/products/sword-pack",
     preview: "/sword-pack-cover.jpg",
   },
   {
     name: "Fantasy Lobby Map",
-    usd: "$0.99",
-    robux: "R$6999",
+    usd: "FREE",
+    robux: "",
     href: "/products/map-one",
     preview: "/fantasy-map-lobby-cover.png",
   },
