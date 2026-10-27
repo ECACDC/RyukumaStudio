@@ -7,17 +7,17 @@ const products = {
   "combat-system": {
     name: "Ryukuma Studios Combat System",
     description: "Roblox combat system with custom animations and configurable modules.",
-    unitAmount: 99,
+    unitAmount: 599,
   },
   "sword-pack": {
     name: "Ryukuma Studios Sword Bundle Pack",
     description: "Bundle of 14 custom Roblox-ready swords with RBXL and FBX files.",
-    unitAmount: 99,
+    unitAmount: 599,
   },
   "fantasy-lobby-map": {
     name: "Ryukuma Studios Fantasy Lobby Map",
     description: "Custom fantasy lobby map built and optimized for Roblox.",
-    unitAmount: 99,
+    unitAmount: 1999,
   },
 } as const;
 
