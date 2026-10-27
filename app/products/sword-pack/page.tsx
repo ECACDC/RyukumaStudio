@@ -16,7 +16,7 @@ export default function SwordPackPage() {
         <a className="backButton" href="/" aria-label="Back to store">‹</a>
         <div className="detailTop">
           <div><div className="eyebrow">MODELS</div><h1>Sword Pack</h1></div>
-          <div className="price">FREE <span>TESTING</span></div>
+          <div className="price">$5.99 <span>USD</span><span className="robuxPrice">R$2999</span></div>
         </div>
         <div className="detailGrid">
           <div className="videoCard">
@@ -25,8 +25,16 @@ export default function SwordPackPage() {
           <div className="detailsCard">
             <p className="detailsLead">A pack of 14 custom-made swords, ready to use in Roblox Studio.</p>
             <ul className="featureList">{features.map((feature) => <li key={feature}><span className="check">✓</span><span>{feature}</span></li>)}</ul>
-            <a className="buyButton" href="/api/download?productId=sword-pack"><span>Download Free</span><span>↓</span></a>
-            <p className="purchaseNote">Temporarily free for Ryukuma Studios download testing.</p>
+            <p className="robuxInfo">Paying with Robux? Price: <strong>R$2999</strong>. Do not use the checkout below. You must cover the Roblox tax. <a href="/contact">Contact us</a> on Discord instead.</p>
+            <form action="/api/checkout" method="POST">
+              <input type="hidden" name="productId" value="sword-pack" />
+              <label className="termsAgreement">
+                <input type="checkbox" name="termsAccepted" value="2026-10-24" required />
+                <span>I have read and agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Use &amp; Refund Policy</a>, including the digital-product refund policy.</span>
+              </label>
+              <button className="buyButton" type="submit"><span>Buy with USD — $5.99</span><span>→</span></button>
+            </form>
+            <p className="purchaseNote">Digital product. Sales are generally final once delivered, except where required by law or covered by our Refund Policy. Secure USD checkout through Stripe.</p>
           </div>
         </div>
       </section>
