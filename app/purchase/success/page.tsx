@@ -6,6 +6,7 @@ const products = {
   "combat-system": "Combat System",
   "sword-pack": "Sword Bundle Pack",
   "fantasy-lobby-map": "Fantasy Lobby Map",
+  "horror-facility": "Horror Facility",
 } as const;
 
 export default async function PurchaseSuccess({
