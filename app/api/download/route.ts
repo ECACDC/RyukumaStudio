@@ -9,6 +9,7 @@ const files = {
   "combat-system": { key: "combat-system.rbxl" },
   "sword-pack": { key: "sword-bundle.zip" },
   "fantasy-lobby-map": { key: "fantasy-lobby-map.rbxl" },
+  "horror-facility": { key: "horror-facility.rbxl" },
 } as const;
 
 export async function GET(request: NextRequest) {
