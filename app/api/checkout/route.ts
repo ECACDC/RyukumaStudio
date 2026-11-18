@@ -19,6 +19,11 @@ const products = {
     description: "Custom fantasy lobby map built and optimized for Roblox.",
     unitAmount: 1999,
   },
+  "horror-facility": {
+    name: "Ryukuma Studios Horror Facility",
+    description: "Optimized Roblox horror facility with 20+ fully decorated custom rooms and easy implementation.",
+    unitAmount: 999,
+  },
 } as const;
 
 type ProductId = keyof typeof products;
