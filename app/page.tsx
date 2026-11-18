@@ -20,6 +20,13 @@ const products = [
     href: "/products/map-one",
     preview: "/fantasy-map-lobby-cover.png",
   },
+  {
+    name: "Horror Facility",
+    usd: "$9.99",
+    robux: "R$3999",
+    href: "/products/horror-facility",
+    preview: "https://img.youtube.com/vi/qPPLc4leNi4/maxresdefault.jpg",
+  },
 ];
 
 export default function Home() {
