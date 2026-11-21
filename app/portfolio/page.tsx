@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 const categories = ["Models", "VFX", "Builds", "Scripting", "GFX", "UIs"];
 const projects = [{title:"Medieval Fortress & Terrain Map",category:"Builds",images:["/portfolio/medieval-fortress-1.png","/portfolio/medieval-fortress-2.png","/portfolio/medieval-fortress-3.png","/portfolio/medieval-fortress-4.png"]}];
 export default function Portfolio(){
@@ -8,6 +8,22 @@ export default function Portfolio(){
  const [expanded,setExpanded]=useState<string|null>(null);
  const touch=useRef<number|null>(null);
  const visible=projects.filter(p=>p.category===category);
+ useEffect(()=>{
+  const onKeyDown=(event:KeyboardEvent)=>{
+   if(event.key==="Escape"&&expanded){setExpanded(null);return;}
+   if(event.key!=="ArrowLeft"&&event.key!=="ArrowRight")return;
+   const target=event.target as HTMLElement|null;
+   if(target && (target.isContentEditable || ["INPUT","TEXTAREA","SELECT"].includes(target.tagName)))return;
+   const activeProject=expanded?projects.find(p=>p.title===expanded):projects.find(p=>p.category===category);
+   if(!activeProject)return;
+   event.preventDefault();
+   const delta=event.key==="ArrowRight"?1:-1;
+   setIndices(prev=>({...prev,[activeProject.title]:((prev[activeProject.title]||0)+delta+activeProject.images.length)%activeProject.images.length}));
+  };
+  window.addEventListener("keydown",onKeyDown);
+  return ()=>window.removeEventListener("keydown",onKeyDown);
+ },[category,expanded]);
+
  const move=(title:string,total:number,delta:number)=>setIndices(prev=>({...prev,[title]:((prev[title]||0)+delta+total)%total}));
  return <main>
   <header className="nav shell"><a className="brand" href="/"><img className="brandLogo" src="/TransparentLogoRS.png" alt=""/><span>RYUKUMA STUDIOS</span></a><nav className="navLinks"><a href="/">Home</a><a href="/portfolio" aria-current="page">Portfolio</a><a href="/contact">Contact Us</a><a href="/terms">Terms & Refunds</a></nav></header>
